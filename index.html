@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité – Homework AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple: #6C5CE7;
+      --purple-light: #a29bfe;
+      --purple-dark: #4834d4;
+      --bg: #0f0e17;
+      --surface: #1a1927;
+      --border: rgba(108,92,231,0.2);
+      --text: #fffffe;
+      --text-muted: #a7a9be;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Background mesh */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(108,92,231,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(162,155,254,0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 64px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,92,231,0.15);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--purple-light);
+      margin-bottom: 28px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple-light);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--purple-light);
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 520px;
+    }
+
+    .update-date {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--purple-light);
+      opacity: 0.7;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--purple) 0%, transparent 100%);
+      margin: 48px 0;
+      opacity: 0.3;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: border-color 0.3s;
+    }
+
+    .section:hover {
+      border-color: rgba(108,92,231,0.4);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(108,92,231,0.2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    ul li {
+      color: var(--text-muted);
+      font-size: 15px;
+      padding: 8px 0 8px 20px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--purple-light);
+      opacity: 0.7;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: rgba(108,92,231,0.1);
+      border: 1px solid rgba(108,92,231,0.3);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .highlight p {
+      color: var(--purple-light);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Contact */
+    .contact-link {
+      color: var(--purple-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(162,155,254,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--purple-light);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: var(--purple-light);
+      margin-bottom: 12px;
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 13px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="badge">Politique de confidentialité</div>
+      <h1>Vos données,<br><em>en toute transparence.</em></h1>
+      <p class="subtitle">Nous prenons la confidentialité de nos utilisateurs très au sérieux, en particulier celle des enfants et des étudiants.</p>
+      <p class="update-date">Dernière mise à jour : 23 février 2026</p>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- Introduction -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <h2>Introduction</h2>
+      </div>
+      <p><strong>Homework AI</strong> est une application mobile d'aide aux devoirs alimentée par l'intelligence artificielle (GPT-4o d'OpenAI). Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application.</p>
+      <p>En utilisant Homework AI, vous acceptez les pratiques décrites dans cette politique.</p>
+    </div>
+
+    <!-- Données collectées -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🗂️</div>
+        <h2>Données collectées</h2>
+      </div>
+      <p>Homework AI collecte uniquement les données strictement nécessaires au fonctionnement de l'application :</p>
+      <ul>
+        <li><strong>Photos et images</strong> — les photos de devoirs que vous prenez ou sélectionnez depuis votre galerie, transmises à l'API OpenAI pour analyse.</li>
+        <li><strong>Texte saisi</strong> — vos questions et messages dans le chat IA, envoyés à l'API OpenAI pour générer des réponses.</li>
+        <li><strong>Préférences locales</strong> — votre nom et préférences d'affichage, stockés uniquement sur votre appareil.</li>
+        <li><strong>Historique des devoirs</strong> — les exercices résolus, stockés localement sur votre appareil.</li>
+      </ul>
+      <div class="highlight">
+        <p>⚠️ Nous ne créons pas de compte utilisateur. Aucune donnée personnelle (email, mot de passe, numéro de téléphone) n'est collectée.</p>
+      </div>
+    </div>
+
+    <!-- Utilisation des données -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚙️</div>
+        <h2>Utilisation des données</h2>
+      </div>
+      <p>Les données que vous partagez sont utilisées uniquement pour :</p>
+      <ul>
+        <li>Analyser vos exercices scolaires et générer des corrections détaillées via GPT-4o Vision</li>
+        <li>Répondre à vos questions dans le chat IA</li>
+        <li>Afficher votre historique de devoirs dans l'application</li>
+        <li>Personnaliser votre expérience (nom affiché, préférences)</li>
+      </ul>
+    </div>
+
+    <!-- Partage avec tiers -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔗</div>
+        <h2>Partage avec des tiers</h2>
+      </div>
+      <p>Nous partageons certaines données avec un unique fournisseur tiers :</p>
+      <ul>
+        <li><strong>OpenAI (api.openai.com)</strong> — vos images de devoirs et messages sont transmis à l'API d'OpenAI pour analyse. OpenAI traite ces données conformément à sa propre <a href="https://openai.com/policies/privacy-policy" class="contact-link" target="_blank">politique de confidentialité</a>.</li>
+      </ul>
+      <div class="highlight">
+        <p>✅ Nous ne vendons pas, ne louons pas et ne partageons pas vos données avec des annonceurs ou d'autres tiers.</p>
+      </div>
+    </div>
+
+    <!-- Stockage et sécurité -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔒</div>
+        <h2>Stockage et sécurité</h2>
+      </div>
+      <ul>
+        <li><strong>Stockage local uniquement</strong> — l'historique, les préférences et le nom sont stockés sur votre appareil via SharedPreferences. Aucune base de données distante n'est utilisée.</li>
+        <li><strong>Transmission sécurisée</strong> — toutes les communications avec l'API OpenAI se font via HTTPS (chiffrement TLS).</li>
+        <li><strong>Pas de serveur propre</strong> — Homework AI ne possède pas de serveur backend. Vos données ne transitent pas par nos serveurs.</li>
+        <li><strong>Suppression</strong> — vous pouvez effacer tout votre historique depuis l'écran Compte → Effacer l'historique.</li>
+      </ul>
+    </div>
+
+    <!-- Enfants -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">👦</div>
+        <h2>Protection des mineurs</h2>
+      </div>
+      <p>Homework AI est conçu pour aider les étudiants et enfants dans leurs devoirs scolaires. Nous prenons la protection des mineurs très au sérieux :</p>
+      <ul>
+        <li>Nous ne collectons aucune information personnelle identifiable des enfants (nom complet, email, localisation).</li>
+        <li>Aucun compte utilisateur n'est requis pour utiliser l'application.</li>
+        <li>Les images et textes envoyés à OpenAI sont utilisés uniquement pour résoudre des exercices scolaires.</li>
+        <li>Nous recommandons aux parents de superviser l'utilisation de l'application par les enfants de moins de 13 ans.</li>
+      </ul>
+    </div>
+
+    <!-- Droits -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <h2>Vos droits</h2>
+      </div>
+      <p>Conformément au RGPD et aux lois applicables, vous disposez des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès</strong> — consulter les données stockées localement sur votre appareil dans l'application.</li>
+        <li><strong>Droit de suppression</strong> — effacer tout l'historique via l'écran Compte de l'application.</li>
+        <li><strong>Droit d'opposition</strong> — cesser d'utiliser l'application à tout moment.</li>
+      </ul>
+    </div>
+
+    <!-- Modifications -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔄</div>
+        <h2>Modifications de cette politique</h2>
+      </div>
+      <p>Nous pouvons mettre à jour cette politique de confidentialité. En cas de modification importante, nous mettrons à jour la date en haut de cette page. Nous vous encourageons à consulter régulièrement cette page.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">✉️</div>
+        <h2>Nous contacter</h2>
+      </div>
+      <p>Pour toute question concernant cette politique de confidentialité ou l'utilisation de vos données, vous pouvez nous contacter à :</p>
+      <p><a href="mailto:elfathi.karim.it@gmail.com" class="contact-link">elfathi.karim.it@gmail.com</a></p>
+    </div>
+
+    <footer>
+      <div class="footer-l
